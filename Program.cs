@@ -9,11 +9,33 @@ namespace Garden
     public static void Main()
     {
       Plant sunflower = new Plant(8, 5, 9);
+      Console.WriteLine(@"
+             .-.'  '.-.
+          .-(   \  /   )-.
+         /   '..oOOo..'   \
+ ,       \.--.oOOOOOOo.--./
+ |\  ,   (   :oOOOOOOo:   )
+_\.\/|   /'--'oOOOOOOo'--'\
+'-.. ;/| \   .''oOOo''.   /
+.--`'. :/|'-(   /  \   )-'
+ '--. `. / //'-'.__.'-;
+   `'-,_';//      ,  /|
+        '((       |\/./_
+          \\  . |\; ..-'
+           \\ |\: .'`--.
+            \\, .' .--'
+             ))'_,-'`
+            //-'
+           // 
+          //
+         |/
+        ");
       while (sunflower.IsAlive())
       {
-        Console.WriteLine("What would you like to do? \n\tPlant Status? (enter 'status')\n\tWater? (enter 'water')\n\tFertilize? (enter 'water')\n\tSolarize? (enter 'solarize')");
-        string input = Console.ReadLine();
         
+        Console.WriteLine("What would you like to do? \nPlant Status? (enter 'status')\nWater? (enter 'water')\nFertilize? (enter 'water')\nSolarize? (enter 'solarize')");
+        string input = Console.ReadLine();
+    
         if (input.ToUpper() == "STATUS")
         {
           Console.WriteLine("-------------------------------");
@@ -32,16 +54,26 @@ namespace Garden
         }
         else if (input.ToUpper() == "FERTILIZE")
         {
-          sunflower.Fertilizer();
+          sunflower.Fertilize();
           Console.WriteLine("You fertilized your sunflower, but she is not yet fulfilled");
         }
         else if (input.ToUpper() == "SOLARIZE")
         {
-          sunflower.Fertilizer();
+          sunflower.Solarize();
           Console.WriteLine("You solarized your sunflower, but she is not yet fulfilled");
         }
       }
-      Console.WriteLine("Your sunflower has chosen to commit suicide rather than remain in your company")
+      Console.WriteLine("Your sunflower has chosen to commit suicide rather than remain in your company");
+      Console.WriteLine(@"
+            _______
+            |/      |
+            |      (_)
+            |      \|/
+            |       |
+            |      / \
+            |
+        ____|___
+        ");
     }
   }
 }
