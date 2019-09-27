@@ -1,16 +1,50 @@
 namespace Planties
 {
-  public class Plant
+  class Plant
   {
-    private int Water;
-    private int Fertilizer;
-    private int Sunshine;
+    private int _water;
+    private int _fertilizer;
+    private int _sunshine;
 
     public Plant(int water, int fertilizer, int sunshine)
     {
-      Water = water;
-      Fertilizer = fertilizer;
-      Sunshine = sunshine;
+      _water = water;
+      _fertilizer = fertilizer;
+      _sunshine = sunshine;
+    }
+    public int GetWater()
+    {
+      return _water;
+    }
+    public int GetFertilizer()
+    {
+      return _fertilizer;
+    }
+    public int GetSunshine()
+    {
+      return _sunshine;
+    }
+    public bool IsAlive()
+    {
+      return _water > 0 && _fertilizer > 0 && _sunshine > 0;
+    }
+    public void Water()
+    {
+      _water = _water + 4;
+      _fertilizer = _fertilizer - 1;
+      _sunshine = _sunshine - 1;
+    }
+    public void Fertilize()
+    {
+      _fertilizer = _fertilizer + 3;
+      _water = _water - 1;
+      _sunshine = _sunshine - 1;
+    }
+    public void Solarize()
+    {
+      _sunshine = _sunshine + 4;
+      _fertilizer = _fertilizer -1;
+      _water = _water - 4;
     }
   }
 }
